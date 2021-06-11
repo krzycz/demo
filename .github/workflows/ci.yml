@@ -50,8 +50,11 @@ jobs:
     strategy:
       matrix:
         include:
-         - build-type: XXX=1
-         - build-type: XXX=0
+         - xxx: 1
+         - xxx: 0
+        incliude:
+         - debug: 1
+         - debug: 0
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -60,9 +63,9 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Build it
-        run: make all
+        run: make all DEBUG=${{ matrix.debug }} XXX=${{ matrix.xxx }}
 
       # Runs a set of commands using the runners shell
       - name: Run some tests
         run: make check
-      
+ 
