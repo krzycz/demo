@@ -23,14 +23,7 @@ jobs:
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: demo.tgz
-          asset_name: tarball
+          asset_name: demo-${{ github.ref }}.tgz
           tag: ${{ github.ref }}
           overwrite: true
           body: "This is my release text"
-      
-      - name: Upload Release Asset 2
-        uses: AButler/upload-release-assets@v2.0
-        with:
-          files: '*.tgz'
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          release-tag: ${{ github.ref }}
