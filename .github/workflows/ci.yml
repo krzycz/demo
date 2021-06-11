@@ -39,6 +39,7 @@ jobs:
         uses: actions/checkout@master
         with:
           repository: krzycz/demo2
+          path: ./src/INCLUDE      
 
       - name: Check commit message
         run: make check-commit-msg
