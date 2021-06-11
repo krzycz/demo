@@ -18,5 +18,11 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Create a tarball
-        run: tar czf demo-${{ }}.tgz *
+        run: tar czf demo.tgz *
     
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: tarball
+          path: demo.tgz
+          retention-days: 5
