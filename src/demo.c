@@ -2,6 +2,7 @@
  * Copyright (c) 2021 Krzysztof Czurylo
  */
 #include <stdio.h>
+#include "INCLUDE/test.h"
 
 int
 main(int argc, const char *argv[])
