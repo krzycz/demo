@@ -1,0 +1,22 @@
+# This is a basic workflow to help you get started with Actions
+
+name: demo release
+
+# Controls when the action will run. 
+on:
+  release:
+    types: # This configuration does not affect the page_build event above
+      - created
+      
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      - name: Create a tarball
+        run: tar czf demo-${{ }}.tgz *
+    
