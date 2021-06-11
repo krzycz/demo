@@ -51,10 +51,11 @@ jobs:
       matrix:
         include:
          - xxx: 1
+           debug: 1
          - xxx: 0
-        incliude:
-         - debug: 1
-         - debug: 0
+           debug: 1
+         - xxx: 1
+           debug: 0
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
