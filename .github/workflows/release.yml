@@ -29,7 +29,7 @@ jobs:
           body: "This is my release text"
       
       - name: Upload Release Asset 2
-      - uses: AButler/upload-release-assets@v2.0
+        uses: AButler/upload-release-assets@v2.0
         with:
           files: '*.tgz'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
