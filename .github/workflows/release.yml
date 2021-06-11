@@ -5,6 +5,7 @@ name: demo release
 # Controls when the action will run. 
 on:
   release:
+    types: create
       
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -26,4 +27,3 @@ jobs:
           asset_name: demo-${{ github.ref }}.tgz
           tag: ${{ github.ref }}
           overwrite: true
-          body: "This is my release text"
