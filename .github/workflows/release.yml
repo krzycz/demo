@@ -1,12 +1,11 @@
 # This is a basic workflow to help you get started with Actions
 
-name: demo release
+name: release
 
 # Controls when the action will run. 
 on:
   release:
-    types: 
-      - created
+    types: [created]
       
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
