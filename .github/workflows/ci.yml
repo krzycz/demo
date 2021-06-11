@@ -36,10 +36,10 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Check out another repo
-        uses: actions/checkout@master
+        uses: actions/checkout@v2
         with:
           repository: krzycz/demo2
-          path: ./src/INCLUDE      
+          path: ./src/INCLUDE
 
       - name: Check commit message
         run: make check-commit-msg
@@ -67,7 +67,14 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - name: Check out repo
+        uses: actions/checkout@v2
+
+      - name: Check out another repo
+        uses: actions/checkout@v2
+        with:
+          repository: krzycz/demo2
+          path: ./src/INCLUDE
 
       # Runs a single command using the runners shell
       - name: Build it
