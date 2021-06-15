@@ -32,7 +32,14 @@ jobs:
     
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - name: Check out repo
+        uses: actions/checkout@v2
+
+      - name: Check out another repo
+        uses: actions/checkout@v2
+        with:
+          repository: krzycz/demo2
+          path: ./src/INCLUDE
 
       - name: Check commit message
         run: make check-commit-msg
@@ -47,16 +54,33 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        include:
+         - xxx: 1
+           debug: 1
+         - xxx: 0
+           debug: 1
+         - xxx: 1
+           debug: 0
+
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - name: Check out repo
+        uses: actions/checkout@v2
+
+      - name: Check out another repo
+        uses: actions/checkout@v2
+        with:
+          repository: krzycz/demo2
+          path: ./src/INCLUDE
 
       # Runs a single command using the runners shell
       - name: Build it
-        run: make all
+        run: make all DEBUG=${{ matrix.debug }} XXX=${{ matrix.xxx }}
 
       # Runs a set of commands using the runners shell
       - name: Run some tests
         run: make check
-      
+ 
