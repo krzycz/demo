@@ -11,5 +11,7 @@ main(int argc, const char *argv[])
 		printf("arg #%d: %s\n", i, argv[i]);
 	}
 
+	printf("mytopic2\n");
+
 	return 0;
 }
