@@ -43,6 +43,7 @@ jobs:
           repository: krzycz/demo2
           path: ./src/INCLUDE
           fetch-depth: 100
+          ref: ${{ github.ref }}
 
       - name: Check commit message
         run: make check-commit-msg
@@ -81,6 +82,7 @@ jobs:
           repository: krzycz/demo2
           path: ./src/INCLUDE
           fetch-depth: 100
+          ref: ${{ github.ref }}
 
       # Runs a single command using the runners shell
       - name: Build it
