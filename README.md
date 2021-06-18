@@ -1,3 +1,3 @@
 # demo
 
-![main status](https://github.com/krzycz/demo/actions/workflows/main.yml/badge.svg?branch=main)
+![main status](https://github.com/krzycz/demo/actions/workflows/ci.yml/badge.svg?branch=main)
