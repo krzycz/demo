@@ -6,7 +6,6 @@ name: demo CI
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
     paths-ignore:
     - 'docs/**'
 
@@ -34,12 +33,16 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Check out repo
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 100
 
       - name: Check out another repo
         uses: actions/checkout@v2
         with:
           repository: krzycz/demo2
           path: ./src/INCLUDE
+          fetch-depth: 100
+          ref: ${{ github.ref }}
 
       - name: Check commit message
         run: make check-commit-msg
@@ -69,12 +72,16 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Check out repo
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 100
 
       - name: Check out another repo
         uses: actions/checkout@v2
         with:
           repository: krzycz/demo2
           path: ./src/INCLUDE
+          fetch-depth: 100
+          ref: ${{ github.ref }}
 
       # Runs a single command using the runners shell
       - name: Build it
