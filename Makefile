@@ -2,6 +2,8 @@
 # Copyright (c) 2021 Krzysztof Czurylo
 #
 # xxx
+# yyy
+
 
 CFLAGS += -ggdb -O0
 
