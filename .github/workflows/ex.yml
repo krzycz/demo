@@ -14,7 +14,6 @@ jobs:
       env:
         ANNOTATIONS: |
           {"path":"README.md","start_line":1,"end_line":2,"message":"Check your spelling for 'banaas'.","annotation_level":"warning"}
-    - uses: ./
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         name: Test With Annotations From Run
@@ -29,7 +28,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: ./
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         name: Test With Images
