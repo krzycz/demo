@@ -1,0 +1,41 @@
+name: "examples"
+on: [push]
+
+jobs:
+  # make sure the action works on a clean machines without building
+  
+  test_with_annotations_from_run:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - id: annotations
+      run: |
+        echo ::set-output name=value::$ANNOTATIONS
+      env:
+        ANNOTATIONS: |
+          {"path":"README.md","start_line":1,"end_line":2,"message":"Check your spelling for 'banaas'.","annotation_level":"warning"}
+    - uses: ./
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        name: Test With Annotations From Run
+        conclusion: success
+        # output.summary is required with actions!
+        output: |
+          {"summary":"Some warnings in README.md"}
+        annotations: ${{ steps.annotations.outputs.value }}
+
+  ## With images
+  test_with_images:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: ./
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        name: Test With Images
+        conclusion: success
+        # output.summary is required with actions!
+        output: |
+          {"summary":"Some cool pics"}
+        images: |
+          [{"alt":"Cool pic","image_url":"https://via.placeholder.com/150","caption":"Cool description"}]
