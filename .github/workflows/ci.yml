@@ -39,7 +39,7 @@ jobs:
       - name: Check out another repo
         uses: actions/checkout@v2
         with:
-          repository: krzycz/demo2
+          repository: krzycz/demo
           path: ./src/INCLUDE
           fetch-depth: 100
           ref: ${{ github.ref }}
