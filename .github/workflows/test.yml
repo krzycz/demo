@@ -15,7 +15,10 @@ jobs:
       - name: Build it
         run: |
           echo "ref: ${{ github.ref }}"
+          echo "workflow: ${{ github.workflow }}"
           echo "param1: ${{ inputs.param1 }}"
-          echo "repo: ${{ github.repository.full_name }}"        
-          echo "sender: ${{ github.sender.login }}"        
-          echo "workflow: ${{ github.workflow }}"        
+          echo "repo: ${{ github.event.workflow_dispatch.repository.full_name }}"        
+          echo "sender: ${{ github.event.workflow_dispatch.sender.login }}"        
+          echo "workflow: ${{ github.event.workflow_dispatch.workflow }}"
+          echo "ref: ${{ github.event.workflow_dispatch.ref }}"
+
