@@ -2,7 +2,11 @@ name: triggered remotely
 
 on:
   workflow_dispatch:
-  
+    inputs:
+      param1:
+        required: true
+        type: string
+    
 jobs:
   build:
     runs-on: ubuntu-latest
