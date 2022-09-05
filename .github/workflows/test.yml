@@ -13,4 +13,6 @@ jobs:
           echo "foo"
           echo "ref: ${{ github.ref }}"
           echo "param1: ${{ github.inputs.param1 }}"
-        
+          echo "repo: ${{ github.repository.full_name }}"        
+          echo "sender: ${{ github.sender.login }}"        
+          echo "workflow: ${{ github.workflow }}"        
