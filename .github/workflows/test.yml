@@ -1,0 +1,16 @@
+name: triggered remotely
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Build it
+        run: |
+          echo "foo"
+          echo "ref: ${{ github.ref }}"
+          echo "param1: ${{ github.inputs.param1 }}"
+        
