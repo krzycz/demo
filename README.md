@@ -6,3 +6,5 @@ commit #1
 commit #2
 commit #3
 commit #4
+
+![test](https://krzycz.github.io/demo/rut.svg)
