@@ -6,9 +6,9 @@ on:
       - main
       - release
 
-  schedule:
-    # every day at 01:00am
-    - cron: '0 1 * * *'
+ #schedule:
+ #   # every day at 01:00am
+ #   - cron: '0 1 * * *'
 
   workflow_dispatch:
     inputs:
