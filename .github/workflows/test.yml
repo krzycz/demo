@@ -1,6 +1,12 @@
 name: triggered remotely
 
 on:
+  workflow_call:
+    inputs:
+      param1:
+        required: true
+        type: string
+    
   workflow_dispatch:
     inputs:
       param1:
