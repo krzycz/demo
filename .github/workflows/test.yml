@@ -1,4 +1,4 @@
-name: triggered remotely
+name: reusable
 
 on:
   workflow_call:
