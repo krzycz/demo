@@ -22,5 +22,3 @@ jobs:
           echo "workflow: ${{ github.event.workflow_dispatch.workflow }}"
           echo "ref: ${{ github.event.workflow_dispatch.ref }}"
           
-          sleep 30
-
