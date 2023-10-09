@@ -12,7 +12,9 @@ on:
       param1:
         required: true
         type: string
-    
+  
+  pull_request:
+  
 jobs:
   build:
     uses: krzycz/demo/.github/workflows/test.yml@main
