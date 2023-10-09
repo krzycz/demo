@@ -15,6 +15,6 @@ on:
     
 jobs:
   build:
-    uses: krzycz/demo/.github/workflows/reusable.yml@main
+    uses: krzycz/demo/.github/workflows/test.yml@main
     with:
       param1: ${{ inputs.param1 }}
