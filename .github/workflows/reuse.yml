@@ -22,7 +22,7 @@ jobs:
       param1: ${{ inputs.param1 }}
 
   build2:
-    if: github.repository == 'krzycz/demo2'
+    if: github.repository == 'krzycz/demo'
     uses: krzycz/demo/.github/workflows/test.yml@main
     with:
       param1: 'foobar'
